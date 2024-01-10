@@ -1,6 +1,7 @@
 langchain==0.0.292
 gradio==4.4.0
 chromadb==0.4.15
+transformers==4.35.2
 sentence-transformers==2.2.2
 unstructured==0.10.30
 markdown==3.3.7
