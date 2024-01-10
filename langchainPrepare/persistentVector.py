@@ -44,8 +44,8 @@ def file2Chroma2local():
     print('>>>>>>>>> [ 2- 加载数据 ]( 完成 )')
     # 3- 构建向量数据库
     ## 3.1 文本分块
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=150)
-    split_docs = text_splitter.split_documents(docs)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
+    split_docs = text_splitter.split_documents(docs)[:41660]
     print('>>>>>>>>> [ 3-构建向量数据库 | 文本分块]( 完成 )')
     ## 3.2 向量化-embedding模型
     embeddings = HuggingFaceEmbeddings(model_name=sentence_tf_path)
