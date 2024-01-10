@@ -12,6 +12,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from openxlab.dataset import download
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 
 def openxlab_download():
