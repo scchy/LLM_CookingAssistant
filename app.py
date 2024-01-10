@@ -15,6 +15,10 @@ import openxlab
 import json
 from langchainPrepare.LLM import InternLM_LLM
 from langchainPrepare.persistentVector import file2Chroma2local
+import sys
+import pysqlite3
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import chromadb
 
 with open('./langchainPrepare/_k.json', 'r') as f:
     key_dict = json.load(f)
