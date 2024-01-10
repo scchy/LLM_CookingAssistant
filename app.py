@@ -32,12 +32,13 @@ persist_directory = file2Chroma2local()
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 # 模型下载
 # /home/xlab-app-center/.cache/model or /home/.cache/model
-lm_7b_path = "/home/xlab-app-center/InternLM-7b"
+lm_7b_path = "/home/xlab-app-center/.cache/model/OpenLMLab_InternLM-7b"
+local_path = "/home/xlab-app-center/InternLM-7b"
 sentence_tf_path = '/home/xlab-app-center/sentence-transformer'
 if not os.path.exists(lm_7b_path):
-    download(model_repo='OpenLMLab/InternLM-7b', output=lm_7b_path.rsplit('/', 1)[0])
+    download(model_repo='OpenLMLab/InternLM-7b', output=local_path)
 
-print("os.listdir(lm_7b_path-father)=", os.listdir(lm_7b_path.rsplit('/', 1)[0]))
+print("os.listdir(_-father)=", os.listdir(_.rsplit('/', 1)[0]))
 print("os.listdir(/home/xlab-app-center/.cache)=", os.listdir('/home/xlab-app-center/.cache'))
 print("os.listdir(/home/xlab-app-center/.cache/model)=", os.listdir('/home/xlab-app-center/.cache/model'))
 
