@@ -19,10 +19,10 @@ def openxlab_download():
     if not os.path.exists(load_d):
         os.system(f'mkdir -p {load_d}')
     
-    load_f = load_d + '/cookingBook.json'
-    if not os.path.exists(load_f):
-        download(dataset_repo='Scchy/LLM-Data', source_path='cookingBook.json', target_path=load_f)
-    return load_f
+    out_f =  f'{load_d}/Scchy___LLM-Data/cookingBook.json'
+    if not os.path.exists(out_f):
+        download(dataset_repo='Scchy/LLM-Data', source_path='cookingBook.json', target_path=load_d)
+    return out_f
 
 
 def file2Chroma2local():
