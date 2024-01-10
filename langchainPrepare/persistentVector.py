@@ -22,12 +22,16 @@ def openxlab_download():
     out_f =  f'{load_d}/Scchy___LLM-Data/cookingBook.json'
     if not os.path.exists(out_f):
         download(dataset_repo='Scchy/LLM-Data', source_path='cookingBook.json', target_path=load_d)
-    return out_f
+        
+    sentence_tf_path = '/home/xlab-app-center/sentence-transformer'
+    if not os.path.exists(sentence_tf_path):
+        os.system(f'huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir {sentence_tf_path}')
+    return out_f, sentence_tf_path
 
 
 def file2Chroma2local():
     # 2- 加载数据 /home/xlab-app-center/
-    js_f = openxlab_download()
+    js_f, sentence_tf_path = openxlab_download()
     docs = []
     docs.extend(
         JSONLoader(
@@ -44,7 +48,7 @@ def file2Chroma2local():
     split_docs = text_splitter.split_documents(docs)
     print('>>>>>>>>> [ 3-构建向量数据库 | 文本分块]( 完成 )')
     ## 3.2 向量化-embedding模型
-    embeddings = HuggingFaceEmbeddings(model_name="/root/data/model/sentence-transformer")
+    embeddings = HuggingFaceEmbeddings(model_name=sentence_tf_path)
     print('>>>>>>>>> [ 3-构建向量数据库 | 向量化-embedding]( 完成 )')
     ## 3.3 语料加载到指定路径下的向量数据库
     # 定义持久化路径

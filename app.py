@@ -33,9 +33,6 @@ sentence_tf_path = '/home/xlab-app-center/sentence-transformer'
 if not os.path.exists(lm_7b_path):
     download(model_repo='OpenLMLab/InternLM-7b', model_name='InternLM-7b')
 
-if not os.path.exists(sentence_tf_path):
-    os.system(f'huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir {sentence_tf_path}')
-
 
 def load_chain():
     # 加载问答链
