@@ -15,7 +15,7 @@ from openxlab.dataset import download
 
 
 def openxlab_download():
-    load_d = '/home/.cache/data'
+    load_d = '/home/xlab-app-center/data'
     if not os.path.exists(load_d):
         os.system(f'mkdir -p {load_d}')
     
@@ -26,7 +26,7 @@ def openxlab_download():
 
 
 def file2Chroma2local():
-    # 2- 加载数据
+    # 2- 加载数据 /home/xlab-app-center/
     js_f = openxlab_download()
     docs = []
     docs.extend(
@@ -48,7 +48,7 @@ def file2Chroma2local():
     print('>>>>>>>>> [ 3-构建向量数据库 | 向量化-embedding]( 完成 )')
     ## 3.3 语料加载到指定路径下的向量数据库
     # 定义持久化路径
-    persist_directory = '/home/data_base/vector_db/chroma'
+    persist_directory = '/home/xlab-app-center/data_base/vector_db/chroma'
     if not os.path.exists(persist_directory):
         os.system(f'mkdir -p {persist_directory}')
     
