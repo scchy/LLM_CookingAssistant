@@ -7,3 +7,5 @@ markdown==3.3.7
 jq
 openxlab
 huggingface_hub
+pysqlite3-binary
+
