@@ -11,11 +11,17 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 import gradio as gr
 from openxlab.model import download
-
+import openxlab
+import json
 from langchainPrepare.LLM import InternLM_LLM
 from langchainPrepare.persistentVector import file2Chroma2local
 
+with open('./langchainPrepare/_k.json', 'r') as f:
+    key_dict = json.load(f)
+
+
 warnings.filterwarnings('ignore')
+openxlab.login(ak=key_dict['ak'], sk=key_dict['sk'])
 
 # 数据准备
 persist_directory = file2Chroma2local()
