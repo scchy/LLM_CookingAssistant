@@ -37,6 +37,7 @@ sentence_tf_path = '/home/xlab-app-center/sentence-transformer'
 if not os.path.exists(lm_7b_path):
     download(model_repo='OpenLMLab/InternLM-7b', model_name='InternLM-7b', output=lm_7b_path)
 
+print("os.listdir(lm_7b_path)=", os.listdir(lm_7b_path))
 
 def load_chain():
     # 加载问答链
