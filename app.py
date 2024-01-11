@@ -38,7 +38,7 @@ sentence_tf_path = '/home/xlab-app-center/sentence-transformer'
 if not os.path.exists(lm_7b_path):
     download(model_repo='OpenLMLab/InternLM-7b', output=local_path)
 
-print("os.listdir(_-father)=", os.listdir(_.rsplit('/', 1)[0]))
+print("os.listdir(_-father)=", os.listdir(local_path.rsplit('/', 1)[0]))
 print("os.listdir(/home/xlab-app-center/.cache)=", os.listdir('/home/xlab-app-center/.cache'))
 print("os.listdir(/home/xlab-app-center/.cache/model)=", os.listdir('/home/xlab-app-center/.cache/model'))
 
